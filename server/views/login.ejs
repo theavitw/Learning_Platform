@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <!-- partial:index.partial.html -->
+  <div class="box-form">
+    <div class="left">
+      <div class="overlay">
+        <h1>Hello World.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          et est sed felis aliquet sollicitudin
+        </p>
+
+      </div>
+    </div>
+
+    <div class="right">
+      <h5>Login</h5>
+
+      <form class="mt-3" method="POST" action="/login">
+
+        <% if (messages.error) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= messages.error %>
+          </div>
+          <% } %>
+
+            <div>
+
+
+              <label for="validationDefaultEmail" class="form-label mt-2">Email</label>
+              <div class="input-group">
+
+                <input type="email" name="email" class="form-control" id="validationDefaultEmail"
+                  aria-describedby="inputGroupPrepend2" required>
+              </div>
+              <div>
+                <label for="psw">Password</label>
+                <input type="password" id="psw" name="password" required>
+
+
+      </form>
+    </div>
+
+
+
+    <div>
+      <a href="/register"><button class="btn btn-primary mt-3" type="submit">Login</button></a>
+    </div>
+    </form> 
+
+  </div>
+  <div>
+    <h4 class="mt-3">don't have an account?</h4>
+    <a href="/register"><button type="submit">Register</button></a>
+  </div>
+  <div>
+    <h4 class="mt-3">Continue without login</h4>
+    <a href="http://localhost:3000"><button type="submit">Continue</button></a>
+  </div>
+  <style>
+    /* Style all input fields */
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Style the submit button */
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    /* Style the container for inputs */
+    .container {
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+      display: none;
+      background: #f1f1f1;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    #message p {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+      color: green;
+    }
+
+    .valid:before {
+      position: relative;
+      left: -35px;
+      content: "&#10004;";
+    }
+
+    /* Add a red text color and an "x" icon when the requirements are wrong */
+    .invalid {
+      color: red;
+    }
+
+    .invalid:before {
+      position: relative;
+      left: -35px;
+      content: "&#10006;";
+    }
+
+    body {
+      background-image: linear-gradient(135deg, #fab2ff 10%, #1904e5 100%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: "Open Sans", sans-serif;
+      color: #333333;
+    }
+
+    .box-form {
+
+      margin: auto;
+      width: 80%;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex: 1 1 100%;
+      align-items: stretch;
+      justify-content: space-between;
+      box-shadow: 0 0 20px 6px #090b6f85;
+    }
+
+    @media (max-width: 980px) {
+      .box-form {
+        flex-flow: wrap;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        margin-top: 20%;
+
+      }
+    }
+
+    .box-form div {
+      height: auto;
+    }
+
+    .box-form .left {
+      color: #ffffff;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("https://i.pinimg.com/736x/5d/73/ea/5d73eaabb25e3805de1f8cdea7df4a42--tumblr-backgrounds-iphone-phone-wallpapers-iphone-wallaper-tumblr.jpg");
+      overflow: hidden;
+    }
+
+    .box-form .left .overlay {
+      padding: 30px;
+      width: 100%;
+      height: 100%;
+      background: #5961f9ad;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .box-form .left .overlay h1 {
+      font-size: 5vmax;
+      line-height: 1;
+      /* font-weight: 00; */
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .box-form .left .overlay span p {
+      margin-top: 30px;
+      font-weight: 900;
+    }
+
+    .box-form .left .overlay span a {
+      background: #3b5998;
+      color: #ffffff;
+      margin-top: 10px;
+      padding: 14px 50px;
+      border-radius: 100px;
+      display: inline-block;
+      box-shadow: 0 3px 6px 1px #042d4657;
+    }
+
+    .box-form .left .overlay span a:last-child {
+      background: #1dcaff;
+      margin-left: 30px;
+    }
+
+    .box-form .right {
+      padding: 0px 120px 120px 120px;
+      overflow: hidden;
+      width: -webkit-fill-available;
+    }
+
+    @media (max-width: 980px) {
+      .box-form .right {
+        width: 100%;
+      }
+    }
+
+    .box-form .right h5 {
+      font-size: 6vmax;
+      margin-top: 20%;
+
+    }
+
+    .box-form .right p {
+      font-size: 14px;
+      color: #b0b3b9;
+    }
+
+    .box-form .right .inputs {
+      overflow: hidden;
+    }
+
+    .box-form .right input {
+
+
+      font-size: 16px;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #b0b3b9;
+    }
+
+    .box-form .right .remember-me--forget-password {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .box-form .right .remember-me--forget-password input {
+      margin: 0;
+      margin-right: 7px;
+      width: auto;
+    }
+
+    .box-form .right button {
+
+      color: #fff;
+      font-size: 16px;
+      padding: 12px 30px;
+      /* margin-right: 5 px; */
+      border-radius: 50px;
+      display: inline-block;
+      border: 0;
+      outline: 0;
+      /* box-shadow: 0px 4px 20px 0px #000000a6; */
+      background-image: linear-gradient(135deg, #f570df 10%, #2d28c6 100%);
+    }
+
+    .box-form .right button:hover {
+      background-image: linear-gradient(135deg, #f570df 10%, #2d28c6 100%);
+      box-shadow: 0px 4px 20px 0px #000000a6;
+      cursor: pointer;
+    }
+
+
+    /* label {
+        display: block;
+        position: relative;
+        margin-left: 30px;
+      } */
+
+    /* label::before {
+        content: " \f00c";
+        position: absolute;
+        font-family: FontAwesome;
+        background: transparent;
+        border: 3px solid #70f570;
+        border-radius: 4px;
+        color: transparent;
+        left: -30px;
+        transition: all 0.2s linear;
+      } */
+
+    /* label:hover::before {
+        font-family: FontAwesome;
+        content: " \f00c";
+        color: #fff;
+        cursor: pointer;
+        background: #70f570;
+      } */
+
+    /* label:hover::before .text-checkbox {
+        background: #70f570;
+      } */
+
+    /* label span.text-checkbox {
+        /* display: inline-block; */
+    /* height: auto; */
+    /* position: relative; */
+    /* position: absolute;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.2s linear;
+      } */
+
+    /* label input[type="checkbox"] {
+        display: none;
+      } */
+  </style>
+</body>
+
+</html>
