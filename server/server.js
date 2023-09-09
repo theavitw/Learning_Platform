@@ -99,8 +99,6 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
                 res.redirect("/login")
             }
         });
-
-
     } catch {
         res.redirect("/register")
     }
@@ -112,42 +110,17 @@ app.post("/login", checkNotAuthenticated, passport.authenticate("local", {
     failureFlash: true
 }));
 
-
 //routes
 app.get("/getuser", checkAuthenticated, (req, res) => {
     res.json(req.user.name);
 }
- 
 );
 app.get("/", checkAuthenticated, (req, res) => {
 
     res.writeHead(302, {
         'Location': 'http://localhost:3000/',
-
-
-
-
     });
-
-
-
-
-
-
     res.end();
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 );
 
@@ -205,7 +178,6 @@ app.delete("/logout", (req, res) => {
     });
     res.redirect("/login");
 }
-
 );
 
 
